@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build
         run: |
           sudo apt update
@@ -22,7 +22,7 @@ jobs:
           echo 'CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=y' >> .config
           make V=99
       - name: Upload firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: trunk/bin/
